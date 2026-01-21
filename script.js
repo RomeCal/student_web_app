@@ -1,9 +1,9 @@
 <script>
 function validateForm() {
-    let name = document.getElementById("name").value;
-    let grade = document.getElementById("grade").value;
+    const name = document.getElementById("name").value.trim();
+    const grade = Number(document.getElementById("grade").value);
 
-    if (name === "" || grade === "") {
+    if (name === "" || isNaN(grade)) {
         alert("Please fill in all fields.");
         return false;
     }
